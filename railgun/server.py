@@ -6,7 +6,7 @@ import re
 app = Flask(__name__)
 app.secret_key = 'DojoNinjaSoSkeaky'
 bcrypt = Bcrypt(app)
-mysql = MySQLConnector(app,'theWall')
+mysql = MySQLConnector(app,'railgun')
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 # ==============================================================
