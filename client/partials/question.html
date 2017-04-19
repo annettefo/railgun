@@ -1,0 +1,15 @@
+<div ng-controller="QuestionController">
+	<a href="#/main">Home</a> | <a href="#/answer/{{question._id}}">Answer this Question</a> | <a href="#/">Logout</a><br>
+	<div class="question_table">
+		<div class="alert alert-info" role="alert">
+			<h1><center>{{question.topic}}</center></h1>
+			<center>{{question.description}}</center>
+		</div>
+		<div ng-repeat="Q in question.answers | orderBy:'-like'">
+			<p><h3>{{Q.name}} says:</h3></p>
+			<p><strong>{{Q.answer}}</strong></p>
+			<p> {{Q.details}} </p>
+			<p><span style="color:green"><button ng-click="likes(Q._id)">+{{Q.like}} Like <span class ="glyphicon glyphicon-thumbs-up" </span></button></span></p>
+		</div>
+		<br>
+</div>

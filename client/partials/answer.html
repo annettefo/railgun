@@ -1,0 +1,27 @@
+<div ng-controller="AnswerController">
+  <a href="#/main">Home</a> | <a href="#/addQuestion">Add a Question</a> | <a href="#/">Logout</a><br>
+  <div class="user_table">
+    <div class="alert alert-danger" role="alert" ng-show="errors">
+			<strong>Error!</strong> {{errorMsg}}
+		</div>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th> Question </th>
+        <th> Description </th>
+      </tr>
+        <td>{{question.topic}}</td>
+        <td>{{question.description}}</td>
+      </tr>
+    </table>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th> Your Answer: </th>
+        <th> Supporting details for your answer (optional) </th>
+      </tr>
+        <td><input type="text" ng-model="new_answer.answer" minlength=5 required></td>
+        <td><input type="text" ng-model="new_answer.details"></td>
+        <td><input type="submit" ng-click="addAnswer(question._id)"> | <a class="button" href="#/main">Cancel</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
